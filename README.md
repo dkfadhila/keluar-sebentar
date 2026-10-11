@@ -2,6 +2,8 @@
 
 **Less screen. More little wonders.** A browser-local open-source AI that matches a short outdoor mission to your mood, time, energy, and access preferences. Built from scratch on October 11, 2026 for Hacktoberfest Week 1: Touch Grass.
 
+[Live demo](https://dkfadhila.github.io/keluar-sebentar/) · [Public repository](https://github.com/dkfadhila/keluar-sebentar)
+
 ## Run locally
 
 ```sh
@@ -45,7 +47,7 @@ Four tests cover all 48 combinations of time/energy/access filters, ranking, mal
 
 ## Submission
 
-`SUBMISSION.md` follows the official DEV template. `SUBMIT-ID.md` gives the final publication steps in Bahasa Indonesia. A public repository and public demo link still need to be inserted before publication; a private Sites preview is not a judge-accessible demo.
+`SUBMISSION.md` follows the official DEV template and includes the public repository and demo links. `SUBMIT-ID.md` gives the final DEV publication steps in Bahasa Indonesia. The article must still be published on DEV to enter the challenge.
 
 ## Credits and licensing
 

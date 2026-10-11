@@ -18,7 +18,9 @@ You might get “Meet one ordinary leaf”: find a plant near home, notice its e
 
 ## Demo
 
-**Before publishing: replace this paragraph with a PUBLIC demo URL and upload `demo-desktop.png` / `demo-mobile.png` from this repository. The private Sites preview is for the owner and must not be presented as publicly accessible.**
+[Try Keluar Sebentar in your browser](https://dkfadhila.github.io/keluar-sebentar/). No login or API key is required. Enable the local AI and wait for the first model download before matching a mission.
+
+![Real browser AI matching an Indonesian query to an outdoor mission](https://raw.githubusercontent.com/dkfadhila/keluar-sebentar/main/demo-desktop.png)
 
 Try this exact query: **“Saya ingin lihat tanaman dan daun dekat rumah.”** In the browser test, the real model selected **“Meet one ordinary leaf.”** This result was not a canned response: the worker embedded the Indonesian query, compared it with the filtered mission embeddings, and returned the top matches.
 
@@ -28,7 +30,7 @@ After choosing a mission, download a small text pocket card or press **Pocket ph
 
 ## Code
 
-**Before publishing: insert the PUBLIC GitHub repository URL here.**
+[Source code, setup instructions, and tests on GitHub](https://github.com/dkfadhila/keluar-sebentar).
 
 The application is a static HTML/CSS/JavaScript project with no build step. Run it with Python's HTTP server, or host the `dist` directory. The code, original SVG artwork, mission library, and test suite are included under the MIT license.
 

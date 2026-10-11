@@ -21,12 +21,13 @@ Tested in the Codex in-app Chromium browser, serving `dist/` on localhost:
 5. A clearly labeled test observation is saved and visible in the local journal. Erase removes it and hides the empty journal. Test data was cleaned up.
 6. Desktop layout checked at 1280×900. Mobile layout checked at 390×844; document scrollWidth 375 px, so there is no horizontal overflow.
 7. `demo-desktop.png` and `demo-mobile.png` capture the real model match.
+8. Public GitHub Pages deployment succeeded. The public root URL returned HTTP 200 with the expected application title. The repository is public and its default branch is `main`.
 
 ## Not yet verified
 
 - Offline AI on a disconnected device; no offline reliability claim is made.
 - Outdoor field use; the dialog test is not an outdoor trial.
 - Safari/Firefox, low-memory phones, screen-reader navigation, cache eviction, and network failure recovery.
-- Public GitHub Pages deployment and DEV submission: blocked on GitHub account login/publication.
+- DEV submission: the article has not been published. Public-host AI inference was not repeated; real inference was verified on localhost with the same application files.
 
 Model failure paths display an error and keep curated browsing available, but a forced failure was not exercised in this browser test.
