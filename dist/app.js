@@ -38,10 +38,14 @@ function fail(message){
  if(!ready){$('load-ai').disabled=false;$('load-ai').textContent='Retry model download ↓';$('ai-status').textContent='Local AI unavailable';}else{$('match').disabled=false;$('match').innerHTML='Find a mission <span>→</span>';}
 }
 $('planner-form').addEventListener('submit',e=>{e.preventDefault();if(!ready)return;const query=$('mood').value.trim();if(!query){$('mood').focus();toast('Add a thought or choose one of the small wishes.');return;}$('error').hidden=true;$('match').disabled=true;$('match').textContent='Finding a match on your device…';worker.postMessage({type:'match',query,constraints:constraints(),requestId:++requestId});});
+let pocketURL;
 $('save').addEventListener('click',()=>{
  const card=`KELUAR SEBENTAR\n${current.title} · ${current.minutes} minutes\n\n${current.steps.map((s,i)=>`${i+1}. ${s}`).join('\n')}\n\n${current.take}\n\nWhen you return: ${current.notice}\n\nChoose a safe, familiar place. Try another day if conditions feel wrong.\n`;
- const url=URL.createObjectURL(new Blob([card],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='keluar-sebentar-'+current.id+'.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+ if(pocketURL)URL.revokeObjectURL(pocketURL);pocketURL=URL.createObjectURL(new Blob([card],{type:'text/plain;charset=utf-8'}));$('pocket-text').value=card;$('pocket-status').hidden=true;$('download-card').href=pocketURL;$('download-card').download='keluar-sebentar-'+current.id+'.txt';$('pocket').showModal();
 });
+$('close-pocket').onclick=()=>$('pocket').close();
+$('pocket').addEventListener('close',()=>{if(pocketURL){URL.revokeObjectURL(pocketURL);pocketURL=undefined;}});
+$('copy-card').onclick=async()=>{try{await navigator.clipboard.writeText($('pocket-text').value);$('pocket-status').textContent='Card copied. Paste it into your notes.';}catch{$('pocket-text').focus();$('pocket-text').select();$('pocket-status').textContent='Select and copy the card text with your browser.';}$('pocket-status').hidden=false;};
 $('begin').onclick=()=>{$('outside-summary').textContent=current.title+' · about '+current.minutes+' minutes';$('outside').showModal()};
 $('cancel-outside').onclick=()=>$('outside').close();
 $('back').onclick=()=>{$('outside').close();$('reflection-label').textContent=current.notice;$('reflection-text').value='';$('reflection').showModal()};

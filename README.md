@@ -15,7 +15,7 @@ Open http://127.0.0.1:4173. Python 3 is sufficient; there is no install/build st
 1. Choose **Enable open-source AI**. First use downloads approximately 120 MB of model weights plus tokenizer/runtime files from Hugging Face and jsDelivr. It can take a few minutes.
 2. Wait for **Local AI ready**. Try `Saya ingin lihat tanaman dan daun dekat rumah` or `I want to listen to birds somewhere quiet`.
 3. Set your time, energy, and preferences; choose **Find a mission**.
-4. Save a pocket text card or choose **Take this outside**. The app deliberately has no timer, route tracking, or streak.
+4. Open **Download a pocket card** for a readable preview, an explicit `.txt` download, or **Copy the card**. Choose **Take this outside** when ready. The app deliberately has no timer, route tracking, or streak.
 5. On return, optionally save one observation. The last five saved observations are visible in the local journal; up to 50 are retained. Erase them in **The model, privacy & limitations**.
 
 Curated browsing works without the model. It is explicitly labeled **CURATED PREVIEW**, and does not claim to be AI inference.

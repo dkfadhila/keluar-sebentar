@@ -34,6 +34,14 @@ The redesigned app was checked at 1280×900 and 390×844. At the mobile breakpoi
 - Offline AI on a disconnected device; no offline reliability claim is made.
 - Outdoor field use; the dialog test is not an outdoor trial.
 - Safari/Firefox, low-memory phones, screen-reader navigation, cache eviction, and network failure recovery.
-- DEV submission: the article has not been published. Public-host AI inference was not repeated; real inference was verified on localhost with the same application files.
+- DEV submission: the article has not been published.
 
 Model failure paths display an error and keep curated browsing available, but a forced failure was not exercised in this browser test.
+
+## Post-deployment debug pass
+
+On the public GitHub Pages origin, the redesigned model initialized successfully and the Indonesian leaf query returned **Meet one ordinary leaf**. Empty-query validation correctly focused the input and showed a message. Browser error/warning logs were empty at that point.
+
+The embedded browser did not deliver a native download event for the original pocket-card button. The button now opens a readable card preview with a persistent explicit `.txt` download link and a copy action. The copy action shows feedback inside the modal; if clipboard access is denied, it selects the text for manual copying. Card contents, the download filename, and successful copy UI feedback were verified locally. Native file download and OS clipboard delivery could not be independently verified through the in-app browser automation bridge.
+
+The redesigned leave/return dialogs, local reflection save/render/erase, and conflicting 5-minute/seated/covered filters were checked again. A labeled agent-authored test reflection was removed after verification. No outdoor trial was performed. All four automated tests still pass after the pocket-card fix.
