@@ -1,6 +1,6 @@
 # Keluar Sebentar
 
-**Less screen. More little wonders.** A browser-local open-source AI that matches a short outdoor mission to your mood, time, energy, and access preferences. Built from scratch on October 11, 2026 for Hacktoberfest Week 1: Touch Grass.
+**Take five. Go outside.** A browser-local open-source AI that matches a short outdoor mission to your mood, time, energy, and access preferences. Built from scratch on October 11, 2026 for Hacktoberfest Week 1: Touch Grass.
 
 [Live demo](https://dkfadhila.github.io/keluar-sebentar/) · [Public repository](https://github.com/dkfadhila/keluar-sebentar)
 
@@ -14,9 +14,9 @@ Open http://127.0.0.1:4173. Python 3 is sufficient; there is no install/build st
 
 1. Choose **Enable open-source AI**. First use downloads approximately 120 MB of model weights plus tokenizer/runtime files from Hugging Face and jsDelivr. It can take a few minutes.
 2. Wait for **Local AI ready**. Try `Saya ingin lihat tanaman dan daun dekat rumah` or `I want to listen to birds somewhere quiet`.
-3. Set your time, energy, and preferences; choose **Find my little mission**.
-4. Save a pocket text card or choose **Pocket phone. Step outside.** The app deliberately has no timer, route tracking, or streak.
-5. On return, optionally save one observation. The last five saved observations are visible in the local journal; up to 50 are retained. Erase them in **Open pieces & honest limits**.
+3. Set your time, energy, and preferences; choose **Find a mission**.
+4. Save a pocket text card or choose **Take this outside**. The app deliberately has no timer, route tracking, or streak.
+5. On return, optionally save one observation. The last five saved observations are visible in the local journal; up to 50 are retained. Erase them in **The model, privacy & limitations**.
 
 Curated browsing works without the model. It is explicitly labeled **CURATED PREVIEW**, and does not claim to be AI inference.
 
@@ -51,7 +51,7 @@ Four tests cover all 48 combinations of time/energy/access filters, ranking, mal
 
 ## Credits and licensing
 
-Application code and original SVG illustration: MIT, see LICENSE. Transformers.js: Apache-2.0. Multilingual MiniLM base model: Apache-2.0 as declared on the upstream model card; model downloads remain governed by their upstream terms. DM Sans and Libre Caslon Display are served by Google Fonts under their font licenses. No images or code were copied from another contest entry.
+Application code: MIT, see LICENSE. Hero artwork and transparent door logo were generated with the built-in GPT Image tool. Original PNGs, exact prompts, and asset preparation are preserved in `design/`; see [asset notes](design/ASSETS.md). The generated doorstep scene is illustrative, not evidence of an outdoor field trial. Browser, Apple, and PWA icons derive from the same door mark. Transformers.js: Apache-2.0. Multilingual MiniLM base model: Apache-2.0 as declared on the upstream model card; model downloads remain governed by their upstream terms. Bricolage Grotesque and IBM Plex Mono are served by Google Fonts under their font licenses. No images or code were copied from another contest entry.
 
 ## Challenge window
 

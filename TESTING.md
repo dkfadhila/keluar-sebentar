@@ -23,6 +23,12 @@ Tested in the Codex in-app Chromium browser, serving `dist/` on localhost:
 7. `demo-desktop.png` and `demo-mobile.png` capture the real model match.
 8. Public GitHub Pages deployment succeeded. The public root URL returned HTTP 200 with the expected application title. The repository is public and its default branch is `main`.
 
+## Visual redesign verification
+
+The second design uses generated GPT Image assets: an opaque doorstep hero and a transparent open-door logo. The logo's alpha range is 0–255. The ICO contains 16, 32, 48 and 64 pixel sizes; Apple and PWA icons are also present. All local image/style references resolve to files.
+
+The redesigned app was checked at 1280×900 and 390×844. At the mobile breakpoint, document scrollWidth is 375 px with viewport width 390 px, with no horizontal overflow. All four visible or dialog image references loaded successfully. Local AI initialization and the Indonesian leaf query still work with the updated interface, selecting **Meet one ordinary leaf**. All four automated tests still pass. Updated `demo-desktop.png` and `demo-mobile.png` capture the new interface with that real match.
+
 ## Not yet verified
 
 - Offline AI on a disconnected device; no offline reliability claim is made.

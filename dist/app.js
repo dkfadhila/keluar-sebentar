@@ -7,7 +7,7 @@ const constraints=()=>({minutes:Number($('minutes').value),energy:Number($('ener
 function show(m,ai=false){
  current=m;$('category').textContent=m.category;$('duration').textContent=m.minutes+' MIN';$('mission-title').textContent=m.title;$('mission-description').textContent=m.description;$('mission-icon').textContent=icons[m.icon];$('take').textContent=m.take;
  $('steps').replaceChildren(...m.steps.map(s=>{const li=document.createElement('li');li.textContent=s;return li}));
- $('mode').textContent=ai?'MATCHED BY LOCAL AI':'CURATED PREVIEW';$('preview-note').textContent=ai?'Matched by meaning, then filtered for your time and preferences.':'This preview is curated. Enable AI to match a mission to your words.';
+ $('mode').textContent=ai?'MATCHED BY LOCAL AI':'CURATED PREVIEW';$('preview-note').textContent=ai?'Matched locally. Filtered for your time and preferences.':'A curated preview. Enable local AI to match your words.';
 }
 show(current);
 document.querySelectorAll('[data-query]').forEach(b=>b.addEventListener('click',()=>{$('mood').value=b.dataset.query;invalidate();$('mood').focus()}));
@@ -22,9 +22,9 @@ $('load-ai').addEventListener('click',()=>{
  worker.onmessage=({data})=>{
   if(data.type==='progress'){$('download').value=data.progress;$('ai-detail').textContent=`Downloading ${data.file.split('/').pop()} · ${Math.round(data.progress)}%. Keep this tab open.`;}
   if(data.type==='indexing'){$('download').hidden=true;$('ai-status').textContent='Model loaded · preparing mission embeddings';$('ai-detail').textContent='Reading the mission library locally. Almost ready.';}
-  if(data.type==='ready'){ready=true;$('match').disabled=false;$('load-ai').hidden=true;$('download').hidden=true;$('ai-status').textContent='Local AI ready · multilingual MiniLM';$('ai-detail').textContent='Inference runs in this browser. Your mood stays on your device. English and Bahasa Indonesia welcome.';$('ai-dot').style.background='#234d3a';}
+  if(data.type==='ready'){ready=true;$('match').disabled=false;$('load-ai').hidden=true;$('download').hidden=true;$('ai-status').textContent='Local AI ready · multilingual MiniLM';$('ai-detail').textContent='Inference runs in this browser. Your mood stays on your device. English and Bahasa Indonesia welcome.';$('ai-dot').style.background='#203c53';}
   if(data.type==='result'){
-   $('match').disabled=false;$('match').innerHTML='Find my little mission <span>↗</span>';
+   $('match').disabled=false;$('match').innerHTML='Find a mission <span>→</span>';
    if(data.requestId!==requestId){toast('Preferences changed. Find a new match when ready.');return;}
    if(!data.results.length){toast('No mission fits. Try changing your preferences.');return;}
    show(data.results[0],true);$('alternatives').replaceChildren(...data.results.slice(1).map(m=>{const b=document.createElement('button');b.type='button';b.textContent=m.title+' ↗';b.onclick=()=>show(m,true);return b;}));$('alternatives').hidden=false;
@@ -35,7 +35,7 @@ $('load-ai').addEventListener('click',()=>{
 });
 function fail(message){
  $('error').hidden=false;$('error').textContent='AI could not complete: '+message+'. Curated browsing is still available.';$('download').hidden=true;
- if(!ready){$('load-ai').disabled=false;$('load-ai').textContent='Retry model download ↓';$('ai-status').textContent='Local AI unavailable';}else{$('match').disabled=false;$('match').innerHTML='Find my little mission <span>↗</span>';}
+ if(!ready){$('load-ai').disabled=false;$('load-ai').textContent='Retry model download ↓';$('ai-status').textContent='Local AI unavailable';}else{$('match').disabled=false;$('match').innerHTML='Find a mission <span>→</span>';}
 }
 $('planner-form').addEventListener('submit',e=>{e.preventDefault();if(!ready)return;const query=$('mood').value.trim();if(!query){$('mood').focus();toast('Add a thought or choose one of the small wishes.');return;}$('error').hidden=true;$('match').disabled=true;$('match').textContent='Finding a match on your device…';worker.postMessage({type:'match',query,constraints:constraints(),requestId:++requestId});});
 $('save').addEventListener('click',()=>{

@@ -26,13 +26,13 @@ Try this exact query: **“Saya ingin lihat tanaman dan daun dekat rumah.”** I
 
 The screen labels the result **MATCHED BY LOCAL AI**. Before model loading, you can browse a **CURATED PREVIEW** instead; that mode is deliberately labeled differently.
 
-After choosing a mission, download a small text pocket card or press **Pocket phone. Step outside.** There is no countdown or performance target. On return, you may keep one observation locally, or skip recording altogether.
+After choosing a mission, download a small text pocket card or press **Take this outside**. There is no countdown or performance target. On return, you may keep one observation locally, or skip recording altogether.
 
 ## Code
 
 [Source code, setup instructions, and tests on GitHub](https://github.com/dkfadhila/keluar-sebentar).
 
-The application is a static HTML/CSS/JavaScript project with no build step. Run it with Python's HTTP server, or host the `dist` directory. The code, original SVG artwork, mission library, and test suite are included under the MIT license.
+The application is a static HTML/CSS/JavaScript project with no build step. Run it with Python's HTTP server, or host the `dist` directory. The code, mission library, and test suite are included under the MIT license. The doorstep hero and transparent door logo were generated with GPT Image; their original files and exact prompts are included in the repository. The doorstep is illustrative artwork, not a photo from a field trial.
 
 ## How I Built It
 
