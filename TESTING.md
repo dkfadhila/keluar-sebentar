@@ -46,4 +46,4 @@ The embedded browser did not deliver a native download event for the original po
 
 The redesigned leave/return dialogs, local reflection save/render/erase, and conflicting 5-minute/seated/covered filters were checked again. A labeled agent-authored test reflection was removed after verification. No outdoor trial was performed. All four automated tests still pass after the pocket-card fix.
 
-A deployment check exposed an old browser-cached HTML document despite the server returning the updated document. CSS and application entrypoints now use versioned URLs. The service worker is versioned, registered with `updateViaCache: 'none'`, and revalidates same-origin shell requests instead of relying on HTTP freshness. Its shell cache was advanced to v3.
+A deployment check exposed an old browser-cached HTML document despite the server returning the updated document. CSS and application entrypoints now use versioned URLs. The service worker is versioned, registered with `updateViaCache: 'none'`, and revalidates same-origin shell requests instead of relying on HTTP freshness. Its shell cache was advanced to v4, with immediate worker activation after precaching.

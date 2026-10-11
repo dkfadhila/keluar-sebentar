@@ -1,6 +1,6 @@
-const CACHE='ks-shell-v3';
-const FILES=['./','./index.html','./field-guide.css?v=20261011-3','./app.js?v=20261011-3','./missions.js','./engine.js','./ai-worker.js','./favicon.ico','./manifest.webmanifest','./assets/logo.png','./assets/porch.webp','./assets/favicon-32.png','./assets/apple-touch-icon.png','./assets/icon-192.png','./assets/icon-512.png'];
-self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES))));
+const CACHE='ks-shell-v4';
+const FILES=['./','./index.html','./field-guide.css?v=20261011-4','./app.js?v=20261011-4','./missions.js','./engine.js','./ai-worker.js','./favicon.ico','./manifest.webmanifest','./assets/logo.png','./assets/porch.webp','./assets/favicon-32.png','./assets/apple-touch-icon.png','./assets/icon-192.png','./assets/icon-512.png'];
+self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('ks-shell-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',event=>{
  if(event.request.method!=='GET')return;
